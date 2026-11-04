@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style3.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Rendu SAE 1.04</h1>
+    </header>
+
+    <h2>Requêtes personnelles
+        <br>
+        <br>Certaines images sont petites mais vous pouvez cliquer dessus pour les visionner en taille réelle.
+    </h2>
+
+    <section>
+        <article class="requete" id="requete1">
+            <div class="div">
+                <h3>Requête de Clément</h3>
+                <h4>Requête en langage naturel et objectif :</h4>
+                    <p>
+                    Lister les produits qui sont en rupture de stock
+                    en affichant leur nom, leur catégorie, leur fournisseur, leur code produit ainsi que les
+                    coordonnées du fournisseur tel que son tel, son adresse, sa ville et son pays. Cela
+                    permettra d’identifier précisément les références épuisées pour pouvoir repasser des
+                    commandes rapidement auprès des fournisseurs via leur coordonnées et éviter les
+                    pertes de ventes.
+                    </p>
+                </a>
+            </div>
+            <div class="div">
+                <h3>Intérêt de la requête dans le contexte</h3>
+                <p>Pour Kdou, chaque rupture de stock est une
+                opportunité de vente perdu auprès des clients. En réunissant les produits épuisés et les
+                coordonnées des fournisseurs, cette requête évite aux équipes de chercher plusieurs
+                tables. C’est un gain de temps qui permet de contacter le bon fournisseur
+                immédiatement et de réapprovisionner au plus vite.
+            </p>
+            </div>
+            <div class="div">
+                <div class="sql">
+                    <h3>Requête SQL</h3>
+                    <a href="../img/requête_clément.png" target="_blank">
+                        <img src="../img/requête_clément.png" alt="Requête Clément">
+                    </a>
+                </div>
+                <div class="resultat">
+                    <h3>Résultat</h3>
+                    <a href="../img/resultat_clément.png" target="_blank">
+                        <img src="../img/resultat_clément.png" alt="Résultat Clément">
+                    </a>
+                </div>
+            </div>
+            <div class="div">
+            <h3>Explication</h3>
+                    <p>
+                        Le SELECT va me permettre d’afficher tous les
+                        produits épuisés ainsi que les cordonnées du fournisseur de plus comme chaque article
+                        n’apparaît qu’une seule fois dans la table produit, la requête ne risque pas de faire de
+                        doublons. Je réalise ensuite les JOINTURE entre Categorie, Produit , Fournisseur et Pays
+                        et puis je trie avec mon WHERE ou la quantité de stock est = à 0 donc Pr.UnitStock = 0 et
+                        pour finir je réalise un trie sur le Nom du Produit dans l’ordre croissant.
+                    </p>
+            </div>
+        </article>
+
+        <hr id="hr1">
+
+        <article class="requete" id="requete2">
+            <div class="div">
+                <h3>Requête de Rayane</h3>
+                <h4>Requête en langage naturel et objectif :</h4>
+                    <p>
+                    On cherche à connaître le chiffre d’affaire total généré par les produits provenant de France.
+                    L’objectif est de mesurer les ventes des produits français afin d’évaluer leur importance dans l’activité de KDou.
+                    </p>
+                </a>
+            </div>
+            <div class="div">
+                <h3>Intérêt de la requête dans le contexte</h3>
+                <p>
+                    Cet indicateur permet à KDou de connaître le chiffre d’affaires réalisé grâce aux produits français. L’entreprise pourra ainsi réfléchir à l’intérêt de privilégier les fournisseurs locaux pour réduire les distances de transport et renforcer son image éco-responsable.
+                </p>
+            </div>
+            <div class="div">
+                <div class="sql">
+                    <h3>Requête SQL</h3>
+                    <a href="../img/requête_rayane.png" target="_blank">
+                        <img src="../img/requête_rayane.png" alt="Requête Rayane">
+                    </a>
+                </div>
+                <div class="resultat">
+                    <h3>Résultat</h3>
+                    <a href="../img/resultat_rayane.png" target="_blank">
+                        <img src="../img/resultat_rayane.png" alt="Résultat Rayane">
+                    </a>
+                </div>
+            </div>
+            <div class="div">
+            <h3>Explication</h3>
+                    <p>
+                        Les jointures permettent de relier les commandes aux produits, aux fournisseurs et à leur pays d’origine.
+                         La condition WHERE sélectionne uniquement les produits provenant de France. Enfin, SUM() additionne les montants des ventes pour obtenir le chiffre d’affaires total.
+
+                    </p>
+            </div>
+        </article>
+
+
+        <hr id="hr2">
+
+        <article class="requete" id="requete3">
+            <div class="div">
+                <h3>Requête de Amine</h3>
+                <h4>Requête en langage naturel et objectif :</h4>
+                    <p>
+                    Quels pays hors Union européenne génèrent le plus de chiffre d’affaires pour KDou, à travers leurs fournisseurs ?
+                    </p>
+                    <p>
+                    Objectif : classer les pays d’origine hors UE par chiffre d’affaires pour repérer ceux qui pèsent le plus dans l’activité de KDou.
+                    </p>
+                </a>
+            </div>
+            <div class="div">
+                <h3>Intérêt de la requête dans le contexte</h3>
+                <p>
+                    Les produits venus de pays hors UE sont en général transportés sur de plus longues distances, ce qui pèse sur l’image éco-responsable de KDou. 
+                    Cet indicateur classe ces pays par chiffre d’affaires. 
+                    KDou voit où l’effort compte le plus : chercher des fournisseurs européens équivalents ou regrouper ses achats.
+                </p>
+            </div>
+            <div class="div">
+                <div class="sql">
+                    <h3>Requête SQL</h3>
+                    <a href="../img/requête_amine.png" target="_blank">
+                        <img src="../img/requête_amine.png" alt="Requête Amine">
+                    </a>
+                </div>
+                <div class="resultat">
+                    <h3>Résultat</h3>
+                    <a href="../img/resultat_amine.png" target="_blank">
+                        <img src="../img/resultat_amine.png" alt="Résultat Amine">
+                    </a>
+                </div>
+            </div>
+            <div class="div">
+            <h3>Explication</h3>
+                    <p>
+                        <ol>
+                            <li>Calcul du CA d’une ligne de commande. Le prix de vente n’est pas stocké : c’est le coût d’achat multiplié par le coefficient de marge de la catégorie. Le CA d’une ligne vaut donc Quantité × CoutAchat × CoefMarge × (1 − Remise/100).</li>
+                            <li>Jointures. On part de DetailCommande, pour ne compter que les produits réellement vendus. On rejoint Produit (coût d’achat), puis Categorie (coefficient de marge). Pour l’origine, on rejoint Fournisseur, puis Pays. Ces jointures suivent les clés étrangères du schéma de relations.
+                            Filtre. WHERE Pays.UE = False ne garde que les pays hors UE. La France et les autres pays de l’UE sont exclus.</li>
+                            <li>Regroupement. GROUP BY Pays.PaysFR et Sum calculent un CA par pays.</li>
+                            <li>Tri. ORDER BY 2 DESC classe sur la 2ᵉ colonne, du plus gros CA au plus petit.</li>
+                        </ol>
+                    </p>
+            </div>
+        </article>
+
+    </section>
+
+    <aside>
+        <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="requestsa_j.html">Requêtes A à J</a></li>
+            <li><a href="requests2_5.html">Requêtes 2 à 5</a></li>
+            <li><a href="personal_requests.html">Requêtes personnelles</a></li>
+            
+        </ul>
+        <img id="sql" src="../img/sql_logo.png" alt="Logo SQL">
+    </aside>
+
+    <footer>
+        <h3>SAE 1.04</h3>
+        <span>Réalisée par Clément, Amine, et Rayane</span>
+        <img id="logo" src="../img/logo_paris_cité.png" alt="Paris Cité">
+    </footer>
+</body>
+</html>

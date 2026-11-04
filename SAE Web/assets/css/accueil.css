@@ -1,0 +1,178 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: #F5F1E8;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "content nav"
+        "footer footer";
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    grid-area: header;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: #d7c2ff;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 3em;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+section {
+    grid-area: content;
+    border: 10px solid #1E1E1E;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+article {
+    border: 8px solid #3A3A3A;
+    border-radius: 1px;
+    margin: 10px;
+    padding: 10px;
+}
+
+article > h3 {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+article > div {
+    border: 5px solid #C8A96A;
+    background-color: #C8A96A;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+article > div p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Liste des tables */
+.tables,
+.equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tables span,
+.equipe span {
+    background-color: #F5F1E8;
+    border: 3px solid #363232;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+/* Cartes de navigation */
+article > .cartes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.carte {
+    display: block;
+    background-color: #F5F1E8;
+    border: 3px solid #363232;
+    border-radius: 10px;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.carte h4 {
+    margin: 0 0 8px 0;
+}
+
+.carte p {
+    margin: 0;
+}
+
+.carte:hover,
+.tables span:hover,
+.equipe span:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li::before {
+    content: "ᐅ";
+    margin-right: 10px;
+}
+
+li {
+    margin: 20px 0px 20px 0px;
+}
+
+aside {
+    grid-area: nav;
+    align-self: start;
+    border: 5px solid #1E1E1E;
+    margin: 10px;
+    padding: 10px;
+    position: sticky;
+    top: 10px;
+}
+
+aside a {
+    color: #333;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#sql {
+    border: 5px solid #1E1E1E;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    border: 5px solid #1E1E1E;
+    margin: 10px;
+    padding: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer > img {
+    width: 400px;
+    height: auto;
+    margin-top: 10px;
+}

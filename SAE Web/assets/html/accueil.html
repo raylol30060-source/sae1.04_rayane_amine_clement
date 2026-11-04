@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/accueil.css">
+    <title>Accueil - SAE 1.04</title>
+</head>
+<body>
+    <header>
+        <h1>SAE 1.04</h1>
+        <p>Exploitation d'une base de données avec SQL</p>
+    </header>
+
+    <section>
+        <article class="intro">
+            <h3>Bienvenue</h3>
+            <div>
+                <p>Ce site présente le rendu de notre SAE 1.04. Nous avons interrogé la base de données
+                    <strong>KDou</strong> à l'aide de requêtes SQL : sélections, jointures,
+                    regroupements, sous-requêtes et calculs de chiffre d'affaires.</p>
+                <p>Chaque requête est présentée avec son code, une explication et son résultat.</p>
+            </div>
+        </article>
+
+        <article class="intro">
+            <h3>La base de données</h3>
+            <div class="tables">
+                <span>Categorie</span>
+                <span>Clientele</span>
+                <span>Commande</span>
+                <span>DetailCommande</span>
+                <span>Fournisseur</span>
+                <span>Pays</span>
+                <span>Produit</span>
+            </div>
+            <div>
+                <p>Elle contient 7 tables : les produits sont rangés par catégorie et fournis par des
+                    fournisseurs situés dans différents pays. Les clients passent des commandes, détaillées
+                    ligne par ligne (produit, quantité, remise).</p>
+            </div>
+        </article>
+
+        <article class="intro">
+            <h3>Parcourir le rendu</h3>
+            <div class="cartes">
+                <a class="carte" href="requestsa_j.html">
+                    <h4>Requêtes A à J</h4>
+                    <p>Les dix premières requêtes du sujet.</p>
+                </a>
+                <a class="carte" href="requests2_5.html">
+                    <h4>Requêtes 2 à 5</h4>
+                    <p>Les quatre dernières requêtes du sujet.</p>
+                </a>
+                <a class="carte" href="personal_requests.html">
+                    <h4>Requêtes personnelles</h4>
+                    <p>Les requêtes que nous avons imaginées nous-mêmes.</p>
+                </a>
+            </div>
+        </article>
+
+        <article class="intro">
+            <h3>L'équipe</h3>
+            <div class="equipe">
+                <span>Clément</span>
+                <span>Amine</span>
+                <span>Rayane</span>
+            </div>
+        </article>
+    </section>
+
+    <aside>
+        <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="requestsa_j.html">Requêtes A à J</a></li>
+            <li><a href="requests2_5.html">Requêtes 2 à 5</a></li>
+            <li><a href="personal_requests.html">Requêtes personnelles</a></li>
+        </ul>
+        <img id="sql" src="../img/sql_logo.png" alt="Logo SQL">
+    </aside>
+
+    <footer>
+        <h3>SAE 1.04</h3>
+        <span>Réalisée par Clément, Amine, et Rayane</span>
+        <img id="logo" src="../img/logo_paris_cité.png" alt="Paris Cité">
+    </footer>
+</body>
+</html>
