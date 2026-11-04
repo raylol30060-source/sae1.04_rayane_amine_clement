@@ -150,11 +150,11 @@
             <h3>Explication</h3>
                     <p>
                         <ol>
-                            <li>Calcul du CA d’une ligne de commande. Le prix de vente n’est pas stocké : c’est le coût d’achat multiplié par le coefficient de marge de la catégorie. Le CA d’une ligne vaut donc Quantité × CoutAchat × CoefMarge × (1 − Remise/100).</li>
-                            <li>Jointures. On part de DetailCommande, pour ne compter que les produits réellement vendus. On rejoint Produit (coût d’achat), puis Categorie (coefficient de marge). Pour l’origine, on rejoint Fournisseur, puis Pays. Ces jointures suivent les clés étrangères du schéma de relations.
-                            Filtre. WHERE Pays.UE = False ne garde que les pays hors UE. La France et les autres pays de l’UE sont exclus.</li>
-                            <li>Regroupement. GROUP BY Pays.PaysFR et Sum calculent un CA par pays.</li>
-                            <li>Tri. ORDER BY 2 DESC classe sur la 2ᵉ colonne, du plus gros CA au plus petit.</li>
+                           <li>1er Etape : Calcul du CA d’une ligne de commande. Le prix de vente n’est pas stocké : c’est le coût d’achat multiplié par le coefficient de marge de la catégorie. Le CA d’une ligne vaut donc Quantité × CoutAchat × CoefMarge × (1 − Remise). La remise est stockée sous forme de fraction (0,15 pour 15 %), il n’y a donc pas de division par 100.</li>
+                            <li>2ème  Etape :  Les jointures , on part de DetailCommande, pour ne compter que les produits réellement vendus. On rejoint Produit (coût d’achat), puis Categorie (coefficient de marge). Pour l’origine, on rejoint Fournisseur, puis Pays. Ces jointures suivent les clés étrangères du schéma de relations.</li>
+                            <li>3ème Etape : Le filtre ,WHERE Pa.UE = 'Hors' ne garde que les pays hors UE. La colonne UE contient du texte (« Membre » ou « Hors »). La France et les autres pays de l’UE sont exclus.</li>
+                            <li>4ème Etape : Regroupement GROUP BY Pa.PaysFR et SUM calculent un CA par pays.</li>
+                        <li>5ème Etape : On fini avec le Tri ORDER BY 2 DESC classe sur la 2ᵉ colonne, du plus gros CA au plus petit.</li>
                         </ol>
                     </p>
             </div>
